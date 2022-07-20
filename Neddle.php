@@ -1,17 +1,8 @@
 <?php 
 function findNeedle($needle, $haystack)
 {
-        $results = array();
-        $index = array();
-        $hays = explode(" ",$haystack);
-        foreach($needle as $i => $n)
-        {
-                $p = array_search($n, $hays);
-                if($p)
-                    $index[] = $i;
-        }
-        return ($index)?$index:false;
+        return array_search($haystack, $needle);
 }
 
-echo findNeedle(["red", "blue", "yellow", "black", "grey"], "blue");
+print_r(findNeedle(["red", "blue", "yellow", "black", "grey"], "blue"));
 ?>
